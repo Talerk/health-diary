@@ -1,25 +1,61 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+  BrowserRouter,
+  Route,
+  Routes,
+  Link
+} from "react-router-dom";
+import { HealthCheck } from "./components/HealthCheck";
+import React, { useState } from "react";
+import Welcome from "./components/Welcome";
 
 function App() {
+  const [chosenDay, setChosenDay] = useState(new Date().getDate());
+
+  function getDaysInCurrentMonth() {
+    const date = new Date();
+
+    return new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
+  }
+  const month: number[] = [];
+  const days = getDaysInCurrentMonth();
+  for (let i = 0; i < days; i++) {
+    month[i] = i + 1;
+  }
+
+  const choseTheDay = (newChosenDay: number) => {
+    setChosenDay(newChosenDay);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <BrowserRouter>
+      <header>
+        <div className="menu__container">
+          <Link className="menu" to="/">
+            HOME
+          </Link>
+          <Link className="menu" to="/healthcheck/Page_1">
+            HEALTH
+          </Link>
+        </div>
       </header>
-    </div>
+
+      <Routes>
+        <Route
+          path="/"
+          element={<Welcome />}
+        />
+        <Route
+          path="/healthcheck/*"
+          element={
+            <HealthCheck
+              month={month}
+              chosenDay={chosenDay}
+              choseTheDay={choseTheDay}
+              daysInMonth={month.length}
+            />}
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

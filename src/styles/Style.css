@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(121, 228, 121);
+    background: rgb(76, 221, 79);
+    border-bottom: solid rgb(0, 87, 9) 6px;
+}
+
+.menu__container {
+    min-width: 250px;
+    display: flex;
+    justify-content: space-between
+}
+
+.menu {
+    font-size: 30px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-family: sans-serif;
+    text-decoration: none;
+}
+.menu:hover {
+    color: blue;
+}
+
+.background__container {
+    display: flex;
+    background-color: rgb(84, 84, 255);
+    
+    
+}
+.greeting__container {
+    height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    background:rgb(84, 84, 255);
+    justify-content: center;
+}
+
+.container {
+    width: 50vw;
+    height: calc(100vh - 80px - 120px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 0 0 100px;
+    background: rgb(84, 84, 255);
+}
+.calendar__container {
+    background: rgb(84, 84, 255);
+    height: 120px;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.right__container {
+    align-items: flex-start;
+}
+
+.greeting {
+    font-size: 80px;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.main__text {
+    font-size: 30px;
+    text-align: center;
+    font-family: sans-serif;
+}
+

@@ -1,0 +1,26 @@
+.date__box {
+    height: 50px;
+    width: 50px;
+    border: 3px rgb(113, 50, 50) solid;
+    background-color: yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -3px;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(113, 50, 50);
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+.gray__box {
+    background-color: gray;
+    pointer-events: none;
+    color: black;
+}
+
+.orange__box {
+    background-color: orange;
+}
